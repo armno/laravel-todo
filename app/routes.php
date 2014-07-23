@@ -17,7 +17,8 @@ Route::get('/', function()
 	return View::make('tasks')->with('tasks', $tasks);
 });
 
-Route::get('/tasks', function()
+Route::get('/tasks/view/{id}', function($id)
 {
-	return 'Tasks';
+	$task = Task::find($id);
+	return View::make('task')->with('task', $task);
 });
