@@ -34,6 +34,14 @@ class TasksController extends \BaseController {
 	public function store()
 	{
 		//
+		$validator = Validator::make(Input::all(),
+			['name' => 'required']);
+
+		if ($validator->fails()) {
+			return Redirect::back()
+				->withInput()
+				->withErrors($validator->messages());
+		}
 		$task = new Task;
 		$task->name = Input::get('name');
 		$task->save();

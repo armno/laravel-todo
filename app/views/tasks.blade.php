@@ -5,7 +5,7 @@
 	{{ link_to_route('tasks.create', 'new') }}
 	<ul>
 	@foreach($tasks as $task)
-		<li>{{ link_to('tasks/view/' . $task->id, $task->name) }}</li>
+		<li>{{ link_to_route('tasks.show', $task->name, $task->id) }}</li>
 	@endforeach
 	</ul>
 @stop
