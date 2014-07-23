@@ -13,7 +13,8 @@
 
 Route::get('/', function()
 {
-	return View::make('tasks');
+	$tasks = Task::all();
+	return View::make('tasks')->with('tasks', $tasks);
 });
 
 Route::get('/tasks', function()
