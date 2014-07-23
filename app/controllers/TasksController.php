@@ -22,6 +22,7 @@ class TasksController extends \BaseController {
 	public function create()
 	{
 		//
+		return View::make('create');
 	}
 
 
@@ -33,6 +34,10 @@ class TasksController extends \BaseController {
 	public function store()
 	{
 		//
+		$task = new Task;
+		$task->name = Input::get('name');
+		$task->save();
+		return Redirect::route('tasks.index');
 	}
 
 

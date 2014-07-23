@@ -11,10 +11,4 @@
 |
 */
 
-Route::get('/', 'TasksController@index');
-Route::get('/tasks/view/{id}', 'TasksController@show');
-
-Route::get('/tasks/new', function()
-{
-	return 'new tasks';
-});
+Route::resource('tasks', 'TasksController');
