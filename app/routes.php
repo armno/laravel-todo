@@ -11,14 +11,10 @@
 |
 */
 
-Route::get('/', function()
-{
-	$tasks = Task::all();
-	return View::make('tasks')->with('tasks', $tasks);
-});
+Route::get('/', 'TasksController@index');
+Route::get('/tasks/view/{id}', 'TasksController@show');
 
-Route::get('/tasks/view/{id}', function($id)
+Route::get('/tasks/new', function()
 {
-	$task = Task::find($id);
-	return View::make('task')->with('task', $task);
+	return 'new tasks';
 });
