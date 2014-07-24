@@ -9,8 +9,10 @@ class TasksController extends \BaseController {
 	 */
 	public function index()
 	{
-		$tasks = Task::all();
-		return View::make('tasks')->with('tasks', $tasks);
+		$unfinishedTasks = Task::where('completed', 0)->get();
+		$finishedTasks = Task::where('completed', 1)->get();
+		return View::make('tasks')->with('unfinished', $unfinishedTasks)
+			->with('finished', $finishedTasks);
 	}
 
 
