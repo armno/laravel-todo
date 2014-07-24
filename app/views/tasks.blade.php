@@ -19,7 +19,7 @@
 			])}}
 				{{ Form::submit('delete') }}
 			{{ Form::close() }}
-			|
+
 			{{ Form::open([
 				'route' => [
 					'tasks.update',
