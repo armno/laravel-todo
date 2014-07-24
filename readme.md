@@ -2,6 +2,8 @@
 
 learning [laravelphp](http://laravel.com) by creating a todo app with basic functionality:
 
+![screenshot]()
+
 - list all to-do items, grouped by `completed` status
 - add new to-do items
 - mark an item as `completed`
