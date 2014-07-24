@@ -14,9 +14,9 @@ learning [laravelphp](http://laravel.com) by creating a todo app with basic func
 
 for osx, they can be easily installed via `[brew](http://brew.sh)`
 
-``sh
+```sh
 $ brew install php54 php54-mcrypt mysql
-``
+```
 
 ### development
 
