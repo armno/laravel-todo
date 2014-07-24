@@ -13,7 +13,7 @@ class AddCompletedField extends Migration {
 	public function up()
 	{
 		Schema::table('tasks', function($table) {
-			$table->boolean('completed');
+			$table->boolean('completed')->default(0);
 		});
 	}
 
