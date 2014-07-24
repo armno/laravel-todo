@@ -2,23 +2,17 @@
 
 @section('content')
 	<h1>Laravel To-do</h1>
-	{{ link_to_route('tasks.create', 'new todo item') }}
+	{{ link_to_route('tasks.create',
+		'new todo item',
+		[],
+		['class' => 'pure-button pure-button-primary'])
+	}}
 
-	<h2>Unfinished todo</h2>
-	<ul>
+	<h2>To do</h2>
+	<ul class="tasks">
 	@foreach($unfinished as $task)
 		<li>
-			{{ link_to_route('tasks.show', $task->name, $task->id) }}
-			|
-			{{ Form::open([
-				'route' => [
-					'tasks.destroy',
-					$task->id
-				],
-				'method' => 'delete'
-			])}}
-				{{ Form::submit('delete') }}
-			{{ Form::close() }}
+			<span class="task-name">{{ link_to_route('tasks.show', $task->name, $task->id) }}</span>
 
 			{{ Form::open([
 				'route' => [
@@ -27,14 +21,27 @@
 				],
 				'method' => 'put'
 			])}}
-				{{ Form::submit('done') }}
+				{{ Form::button('done',
+					['class' => 'pure-button button-success', 'type' => 'submit']
+				) }}
+			{{ Form::close() }}
+
+			{{ Form::open([
+				'route' => [
+					'tasks.destroy',
+					$task->id
+				],
+				'method' => 'delete'
+			])}}
+				{{ Form::button('delete',
+				['class' => 'pure-button button-danger', 'type' => 'submit']) }}
 			{{ Form::close() }}
 		</li>
 	@endforeach
 	</ul>
 
-	<h2>Finished</h2>
-	<ul>
+	<h3>Finished</h3>
+	<ul class="tasks finished">
 	@foreach($finished as $task)
 		<li>
 			{{ link_to_route('tasks.show', $task->name, $task->id) }}

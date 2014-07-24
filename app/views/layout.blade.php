@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Laravel Todo</title>
-	<link rel="stylesheet" type="text/css" href="/lib/normalize-css/normalize.css" media="all">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 	<link rel="stylesheet" type="text/css" href="/css/style.css" media="all">
 </head>
 <body>
