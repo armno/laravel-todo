@@ -85,7 +85,11 @@ class TasksController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		// currently update = mark as completed
+		$task = Task::find($id);
+		$task->completed = 1;
+		$task->save();
+		return Redirect::back();
 	}
 
 

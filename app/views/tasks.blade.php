@@ -19,6 +19,16 @@
 			])}}
 				{{ Form::submit('delete') }}
 			{{ Form::close() }}
+			|
+			{{ Form::open([
+				'route' => [
+					'tasks.update',
+					$task->id
+				],
+				'method' => 'put'
+			])}}
+				{{ Form::submit('done') }}
+			{{ Form::close() }}
 		</li>
 	@endforeach
 	</ul>
