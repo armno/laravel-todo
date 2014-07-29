@@ -3,7 +3,7 @@
 @section('content')
 	<h1>Laravel To-do</h1>
 	{{ link_to_route('tasks.create',
-		'new todo item',
+		'New',
 		[],
 		['class' => 'pure-button pure-button-primary'])
 	}}
